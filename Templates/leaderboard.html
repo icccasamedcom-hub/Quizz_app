@@ -1,0 +1,119 @@
+<!-- templates/leaderboard.html -->
+{% extends "base.html" %}
+
+{% block title %}Classement{% endblock %}
+
+{% block content %}
+<div class="mb-6 sm:mb-8">
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">🏆 Classement des Joueurs</h1>
+    <p class="text-sm sm:text-base text-gray-600">Top des meilleurs joueurs selon leur score moyen</p>
+</div>
+
+{% if leaderboard %}
+<!-- Desktop: Table View -->
+<div class="hidden md:block overflow-x-auto">
+    <table class="w-full bg-white rounded-xl overflow-hidden shadow-lg">
+        <thead class="bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white">
+            <tr>
+                <th class="px-6 py-4 text-left text-sm font-semibold">Rang</th>
+                <th class="px-6 py-4 text-left text-sm font-semibold">Joueur</th>
+                <th class="px-6 py-4 text-center text-sm font-semibold">Quiz complétés</th>
+                <th class="px-6 py-4 text-center text-sm font-semibold">Score moyen</th>
+                <th class="px-6 py-4 text-center text-sm font-semibold">Meilleur score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in leaderboard %}
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td class="px-6 py-4">
+                    <div class="text-2xl font-bold">
+                        {% if loop.index == 1 %}🥇
+                        {% elif loop.index == 2 %}🥈
+                        {% elif loop.index == 3 %}🥉
+                        {% else %}{{ loop.index }}{% endif %}
+                    </div>
+                </td>
+                <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                        <img src="{{ player.picture }}" alt="{{ player.name }}"
+                            class="w-10 h-10 rounded-full ring-2 ring-gray-200">
+                        <span class="font-medium text-gray-800">{{ player.name }}</span>
+                    </div>
+                </td>
+                <td class="px-6 py-4 text-center">
+                    <span class="text-gray-700 font-medium">{{ player.total_attempts }}</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                    <span class="text-xl font-bold text-[#667eea]">{{ "%.1f"|format(player.average_score) }}%</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                    <span class="text-gray-700 font-medium">{{ "%.1f"|format(player.best_score) }}%</span>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Mobile: Card View -->
+<div class="md:hidden space-y-3">
+    {% for player in leaderboard %}
+    <div class="bg-white p-4 rounded-xl shadow-lg border-l-4 
+            {% if loop.index == 1 %}border-yellow-400
+            {% elif loop.index == 2 %}border-gray-400
+            {% elif loop.index == 3 %}border-orange-400
+            {% else %}border-gray-200{% endif %}">
+
+        <div class="flex items-start justify-between mb-3">
+            <div class="flex items-center gap-3">
+                <div class="text-2xl">
+                    {% if loop.index == 1 %}🥇
+                    {% elif loop.index == 2 %}🥈
+                    {% elif loop.index == 3 %}🥉
+                    {% else %}<span class="text-lg font-bold text-gray-500">#{{ loop.index }}</span>{% endif %}
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="{{ player.picture }}" alt="{{ player.name }}"
+                        class="w-10 h-10 rounded-full ring-2 ring-gray-200">
+                    <div>
+                        <div class="font-bold text-gray-800">{{ player.name }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 text-center">
+            <div class="bg-gray-50 p-2 rounded-lg">
+                <div class="text-lg font-bold text-gray-800">{{ player.total_attempts }}</div>
+                <div class="text-xs text-gray-600">Quiz</div>
+            </div>
+            <div class="bg-blue-50 p-2 rounded-lg">
+                <div class="text-lg font-bold text-[#667eea]">{{ "%.1f"|format(player.average_score) }}%</div>
+                <div class="text-xs text-gray-600">Moy.</div>
+            </div>
+            <div class="bg-gray-50 p-2 rounded-lg">
+                <div class="text-lg font-bold text-gray-800">{{ "%.1f"|format(player.best_score) }}%</div>
+                <div class="text-xs text-gray-600">Max</div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<!-- Empty State -->
+<div class="text-center py-12 sm:py-16 text-gray-500">
+    <div class="text-5xl sm:text-6xl lg:text-7xl mb-4 sm:mb-6">🏆</div>
+    <h2 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-700">Aucun classement pour le moment</h2>
+    <p class="text-sm sm:text-base mb-6 sm:mb-8">Soyez le premier à compléter un quiz pour apparaître dans le classement
+        !</p>
+    <a href="{{ url_for('quiz.quiz_select') }}" class="btn btn-primary">Commencer un quiz</a>
+</div>
+{% endif %}
+
+<div class="text-center mt-8">
+    <a href="{{ url_for('quiz.dashboard') }}"
+        class="text-gray-600 hover:text-gray-800 transition-colors inline-flex items-center gap-2 text-sm sm:text-base">
+        ← Retour au tableau de bord
+    </a>
+</div>
+{% endblock %}

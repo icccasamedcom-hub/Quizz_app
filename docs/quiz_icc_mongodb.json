@@ -1,0 +1,1082 @@
+[
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Combien de points compose la vision d'Impact Centre Chrétien ?",
+    "options": [
+      { "text": "10 points", "isCorrect": false },
+      { "text": "12 points", "isCorrect": true },
+      { "text": "15 points", "isCorrect": false },
+      { "text": "8 points", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Selon la vision, quel type de génération ICC aspire-t-il à construire ?",
+    "options": [
+      { "text": "Une génération de prédicateurs", "isCorrect": false },
+      { "text": "Une génération d'hommes et de femmes qui inspirent et influencent positivement leur environnement", "isCorrect": true },
+      { "text": "Une génération de riches entrepreneurs", "isCorrect": false },
+      { "text": "Une génération de missionnaires", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "ICC aspire à être un centre de quoi en premier lieu ?",
+    "options": [
+      { "text": "Un centre commercial", "isCorrect": false },
+      { "text": "Un centre de refuge", "isCorrect": true },
+      { "text": "Un centre sportif", "isCorrect": false },
+      { "text": "Un centre culturel", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quelle est la date cible mentionnée dans la vision \"Un centre en devenir\" ?",
+    "options": [
+      { "text": "2025", "isCorrect": false },
+      { "text": "2028", "isCorrect": false },
+      { "text": "2030", "isCorrect": true },
+      { "text": "2035", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "ICC aspire à être un centre de transformation où les membres doivent se conformer à quelle mentalité ?",
+    "options": [
+      { "text": "La mentalité du succès", "isCorrect": false },
+      { "text": "La mentalité de Christ", "isCorrect": true },
+      { "text": "La mentalité moderne", "isCorrect": false },
+      { "text": "La mentalité entrepreneuriale", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Dans la vision, un membre d'ICC doit devenir un adorateur qui vit pour quoi ?",
+    "options": [
+      { "text": "Pour lui-même", "isCorrect": false },
+      { "text": "Pour sa famille", "isCorrect": false },
+      { "text": "Pour réjouir le cœur de Dieu et révéler Sa gloire", "isCorrect": true },
+      { "text": "Pour la communauté", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "ICC aspire à être un centre multiracial où les peuples de toutes nations se retrouvent dans quoi ?",
+    "options": [
+      { "text": "La diversité culturelle", "isCorrect": false },
+      { "text": "L'unité et l'amour de Christ", "isCorrect": true },
+      { "text": "Le commerce international", "isCorrect": false },
+      { "text": "L'échange linguistique", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Selon la vision, ICC est un centre où les malades sont quoi ?",
+    "options": [
+      { "text": "Accueillis", "isCorrect": false },
+      { "text": "Guéris", "isCorrect": true },
+      { "text": "Soignés médicalement", "isCorrect": false },
+      { "text": "Écoutés", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "ICC aspire à former des membres à travers quelle zone géographique principale ?",
+    "options": [
+      { "text": "L'Afrique", "isCorrect": false },
+      { "text": "Le Maroc", "isCorrect": false },
+      { "text": "Toute la Francophonie", "isCorrect": true },
+      { "text": "Le monde entier", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Dans la vision, un membre doit devenir un disciple de Christ qui fait quoi ?",
+    "options": [
+      { "text": "Prie constamment", "isCorrect": false },
+      { "text": "Donne généreusement", "isCorrect": false },
+      { "text": "Forme d'autres disciples", "isCorrect": true },
+      { "text": "Jeûne régulièrement", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la vision, un ambassadeur de Christ doit reconquérir et influencer quoi ?",
+    "options": [
+      { "text": "Les médias sociaux", "isCorrect": false },
+      { "text": "Les territoires volés par l'ennemi", "isCorrect": true },
+      { "text": "Les institutions politiques", "isCorrect": false },
+      { "text": "Les entreprises multinationales", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Dans \"Un centre d'excellence\", l'excellence est décrite comme quoi ?",
+    "options": [
+      { "text": "Un objectif à atteindre", "isCorrect": false },
+      { "text": "Une mentalité et un mode de vie", "isCorrect": true },
+      { "text": "Une compétence professionnelle", "isCorrect": false },
+      { "text": "Un don spirituel", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Quel verset biblique est mentionné concernant les adorateurs en esprit et en vérité ?",
+    "options": [
+      { "text": "Matthieu 5.23", "isCorrect": false },
+      { "text": "Jean 4.23", "isCorrect": true },
+      { "text": "Romains 12.1", "isCorrect": false },
+      { "text": "Psaume 100.4", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Dans la vision, un laboureur doit semer comment pour récolter abondamment ?",
+    "options": [
+      { "text": "Avec sagesse", "isCorrect": false },
+      { "text": "Avec patience", "isCorrect": false },
+      { "text": "Abondamment", "isCorrect": true },
+      { "text": "Stratégiquement", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "ICC aspire à être un centre de puissance économique où les entreprises appliquent quels principes ?",
+    "options": [
+      { "text": "Les principes du capitalisme", "isCorrect": false },
+      { "text": "Les principes du Royaume des cieux", "isCorrect": true },
+      { "text": "Les principes de la microfinance", "isCorrect": false },
+      { "text": "Les principes de l'économie solidaire", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Dans \"Un centre d'édification\", les membres peuvent découvrir et développer quoi ?",
+    "options": [
+      { "text": "Leurs compétences professionnelles", "isCorrect": false },
+      { "text": "Leurs relations sociales", "isCorrect": false },
+      { "text": "Les dons, talents et aptitudes que Dieu a déposés en eux", "isCorrect": true },
+      { "text": "Leurs capacités physiques", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la vision, ICC est un centre de refuge pour quels types de personnes ?",
+    "options": [
+      { "text": "Les riches et les influents", "isCorrect": false },
+      { "text": "Les leaders et les pasteurs", "isCorrect": false },
+      { "text": "Les désespérées, frustrées, rejetées, oppressées, abusées", "isCorrect": true },
+      { "text": "Les jeunes et les enfants", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Dans \"Un centre de communion\", quelles activités sont mentionnées pour créer des liens ?",
+    "options": [
+      { "text": "Seulement les cultes et prières", "isCorrect": false },
+      { "text": "Ateliers, groupes d'impact, agapes, concerts Gospel, activités sportives et théâtrales", "isCorrect": true },
+      { "text": "Uniquement les études bibliques", "isCorrect": false },
+      { "text": "Seulement les réunions de prière", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Dans \"Un centre de transformation\", les membres sont amenés à défier quoi ?",
+    "options": [
+      { "text": "Les autorités établies", "isCorrect": false },
+      { "text": "Le statut quo", "isCorrect": true },
+      { "text": "Les autres églises", "isCorrect": false },
+      { "text": "Les traditions familiales", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "ICC aspire à être un centre d'impact dont l'influence atteint les nations grâce à quoi ?",
+    "options": [
+      { "text": "Les missions internationales", "isCorrect": false },
+      { "text": "Les partenariats avec d'autres églises", "isCorrect": false },
+      { "text": "La diffusion de l'évangile sur tous les médias : TV, Radio, Internet", "isCorrect": true },
+      { "text": "L'implantation de nouvelles églises", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans la vision, un membre doit être simultanément combien de rôles différents ?",
+    "options": [
+      { "text": "3 rôles", "isCorrect": false },
+      { "text": "4 rôles", "isCorrect": false },
+      { "text": "5 rôles", "isCorrect": false },
+      { "text": "6 rôles (adorateur, ambassadeur, leader, disciple, serviteur, laboureur)", "isCorrect": true }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Quel est l'objectif principal de créer des réseaux et entreprises selon \"Un centre de puissance économique\" ?",
+    "options": [
+      { "text": "Enrichir les membres de l'église", "isCorrect": false },
+      { "text": "Concurrencer les entreprises séculières", "isCorrect": false },
+      { "text": "Promouvoir le Royaume de Dieu et laisser un héritage favorable aux enfants de nos enfants", "isCorrect": true },
+      { "text": "Financer exclusivement les activités de l'église", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans \"Un centre de transformation\", combien d'actions sont mentionnées que les membres doivent accomplir ?",
+    "options": [
+      { "text": "3 actions", "isCorrect": false },
+      { "text": "4 actions", "isCorrect": false },
+      { "text": "5 actions (défier le statut quo, renverser barrières/stéréotypes, repousser limitations, renouveler intelligence, se conformer à la mentalité de Christ)", "isCorrect": true },
+      { "text": "6 actions", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Selon la vision, sur combien de dimensions les vies sont-elles reconstruites dans le centre de puissance spirituelle ?",
+    "options": [
+      { "text": "3 dimensions", "isCorrect": false },
+      { "text": "4 dimensions", "isCorrect": false },
+      { "text": "Au moins 5 dimensions (spirituellement, mentalement, physiquement, intellectuellement, émotionnellement...)", "isCorrect": true },
+      { "text": "7 dimensions", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans \"Un centre de refuge\", combien d'éléments sont mentionnés que les personnes trouvent ?",
+    "options": [
+      { "text": "4 éléments", "isCorrect": false },
+      { "text": "5 éléments", "isCorrect": false },
+      { "text": "6 éléments (amour, acceptation, réconfort, espérance, encouragement, restauration)", "isCorrect": true },
+      { "text": "7 éléments", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Quel est le double objectif final mentionné dans plusieurs points de la vision ?",
+    "options": [
+      { "text": "La croissance et la multiplication", "isCorrect": false },
+      { "text": "La sainteté et la prospérité", "isCorrect": false },
+      { "text": "La gloire de Dieu et l'avancement de l'humanité", "isCorrect": true },
+      { "text": "L'évangélisation et le discipulat", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans \"Un centre de formation\", quel outil spécifique est mentionné pour préparer les membres ?",
+    "options": [
+      { "text": "Des programmes en ligne", "isCorrect": false },
+      { "text": "Des stages pratiques", "isCorrect": false },
+      { "text": "Notre école biblique", "isCorrect": true },
+      { "text": "Des partenariats universitaires", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Selon \"Un centre d'impact\", ICC aspire à être quel type d'église ?",
+    "options": [
+      { "text": "Une méga-église internationale", "isCorrect": false },
+      { "text": "Une église traditionnelle modernisée", "isCorrect": false },
+      { "text": "Une église sans barrières qui exerce un Impact Sans Frontières", "isCorrect": true },
+      { "text": "Une église francophone unifiée", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Quels types d'établissements commerciaux sont spécifiquement mentionnés dans \"Un centre de puissance économique\" ?",
+    "options": [
+      { "text": "Banques, assurances, cabinets", "isCorrect": false },
+      { "text": "Restaurants, magasins, salons de coiffure ou d'esthétique", "isCorrect": true },
+      { "text": "Hôtels, agences de voyage, immobilier", "isCorrect": false },
+      { "text": "Écoles, librairies, centres de santé", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Vision",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans \"Un centre d'édification\", par quels moyens les croyants peuvent-ils exprimer leur leadership ?",
+    "options": [
+      { "text": "À travers les médias et publications", "isCorrect": false },
+      { "text": "À travers les ministères et départements", "isCorrect": false },
+      { "text": "À travers nos conférences, séminaires et ateliers", "isCorrect": true },
+      { "text": "À travers les missions et évangélisations", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Combien de valeurs fondamentales ICC a-t-il ?",
+    "options": [
+      { "text": "5 valeurs", "isCorrect": false },
+      { "text": "6 valeurs", "isCorrect": true },
+      { "text": "7 valeurs", "isCorrect": false },
+      { "text": "8 valeurs", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quel acronyme forment les valeurs d'ICC ?",
+    "options": [
+      { "text": "ÉGLISE", "isCorrect": false },
+      { "text": "CHRIST", "isCorrect": true },
+      { "text": "IMPACT", "isCorrect": false },
+      { "text": "AMOUR", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quelle est la première valeur représentée par la lettre \"C\" ?",
+    "options": [
+      { "text": "Courage", "isCorrect": false },
+      { "text": "Compassion", "isCorrect": false },
+      { "text": "Consécration", "isCorrect": true },
+      { "text": "Communion", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quelle valeur est représentée par la lettre \"H\" ?",
+    "options": [
+      { "text": "Honnêteté", "isCorrect": false },
+      { "text": "Humilité", "isCorrect": true },
+      { "text": "Honneur", "isCorrect": false },
+      { "text": "Harmonie", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quelle valeur est représentée par la lettre \"S\" ?",
+    "options": [
+      { "text": "Sainteté", "isCorrect": false },
+      { "text": "Sagesse", "isCorrect": false },
+      { "text": "Service", "isCorrect": true },
+      { "text": "Solidarité", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quelle est la dernière valeur représentée par la lettre \"T\" ?",
+    "options": [
+      { "text": "Travail", "isCorrect": false },
+      { "text": "Transparence", "isCorrect": true },
+      { "text": "Témoignage", "isCorrect": false },
+      { "text": "Tradition", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Selon la valeur \"Respect\", nous devons servir Dieu dans le respect de qui ?",
+    "options": [
+      { "text": "Nos parents uniquement", "isCorrect": false },
+      { "text": "Nos frères et sœurs, et de nos autorités", "isCorrect": true },
+      { "text": "Nos voisins uniquement", "isCorrect": false },
+      { "text": "Les étrangers uniquement", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quel verset biblique est associé à la valeur \"Consécration\" ?",
+    "options": [
+      { "text": "Jean 3:16", "isCorrect": false },
+      { "text": "1 Pierre 1:16", "isCorrect": true },
+      { "text": "Matthieu 6:33", "isCorrect": false },
+      { "text": "Romains 12:1", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Selon la valeur \"Transparence\", pourquoi ne voulons-nous rien avoir à cacher ?",
+    "options": [
+      { "text": "Pour être populaires", "isCorrect": false },
+      { "text": "Pour éviter les problèmes", "isCorrect": false },
+      { "text": "Parce que nous sommes les enfants de la lumière", "isCorrect": true },
+      { "text": "Pour respecter la loi", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quelle valeur est associée au verset Jean 13:8 ?",
+    "options": [
+      { "text": "Consécration", "isCorrect": false },
+      { "text": "Humilité", "isCorrect": true },
+      { "text": "Service", "isCorrect": false },
+      { "text": "Intégrité", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la valeur \"Consécration\", nous désirons marcher dans quoi ?",
+    "options": [
+      { "text": "La prospérité", "isCorrect": false },
+      { "text": "La sagesse", "isCorrect": false },
+      { "text": "La sainteté", "isCorrect": true },
+      { "text": "La puissance", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Dans la valeur \"Humilité\", comment nous reconnaissons-nous ?",
+    "options": [
+      { "text": "Comme des serviteurs fidèles", "isCorrect": false },
+      { "text": "Comme des enfants de Dieu", "isCorrect": false },
+      { "text": "Comme des vases inutiles entre les mains du potier", "isCorrect": true },
+      { "text": "Comme des disciples obéissants", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Quelle référence biblique est associée à la valeur \"Respect\" ?",
+    "options": [
+      { "text": "Éphésiens 5:21", "isCorrect": false },
+      { "text": "Philippiens 2:3", "isCorrect": true },
+      { "text": "Colossiens 3:12", "isCorrect": false },
+      { "text": "1 Pierre 2:17", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la valeur \"Intégrité\", nous aspirons à être des personnes qui marchent dans quoi ?",
+    "options": [
+      { "text": "La foi", "isCorrect": false },
+      { "text": "La droiture", "isCorrect": true },
+      { "text": "La charité", "isCorrect": false },
+      { "text": "La patience", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Quel verset biblique est mentionné pour la valeur \"Service\" ?",
+    "options": [
+      { "text": "Marc 10:45", "isCorrect": false },
+      { "text": "Matthieu 20:28", "isCorrect": false },
+      { "text": "Philippiens 2:7", "isCorrect": true },
+      { "text": "Jean 13:14", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la valeur \"Service\", Jésus a pris quelle condition alors qu'il était Roi ?",
+    "options": [
+      { "text": "La condition d'enseignant", "isCorrect": false },
+      { "text": "La condition de prophète", "isCorrect": false },
+      { "text": "La condition de serviteur", "isCorrect": true },
+      { "text": "La condition de sacrificateur", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Quelle référence biblique est associée à la valeur \"Transparence\" ?",
+    "options": [
+      { "text": "Éphésiens 5:8", "isCorrect": false },
+      { "text": "1 Thessaloniciens 5:5", "isCorrect": true },
+      { "text": "1 Jean 1:7", "isCorrect": false },
+      { "text": "Jean 3:21", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Dans la valeur \"Intégrité\", qui est mentionné comme modèle de droiture ?",
+    "options": [
+      { "text": "Abraham", "isCorrect": false },
+      { "text": "Moïse", "isCorrect": false },
+      { "text": "Christ", "isCorrect": true },
+      { "text": "David", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la valeur \"Humilité\", qui est le modèle parfait par excellence ?",
+    "options": [
+      { "text": "Les apôtres", "isCorrect": false },
+      { "text": "Christ", "isCorrect": true },
+      { "text": "Les prophètes", "isCorrect": false },
+      { "text": "Les patriarches", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Dans la valeur \"Service\", nous désirons être quoi pour l'humanité ?",
+    "options": [
+      { "text": "Un exemple", "isCorrect": false },
+      { "text": "Un témoignage", "isCorrect": false },
+      { "text": "Un don", "isCorrect": true },
+      { "text": "Une bénédiction", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Quel verset biblique spécifique est cité pour la valeur \"Intégrité\" ?",
+    "options": [
+      { "text": "Genèse 6:9", "isCorrect": false },
+      { "text": "Genèse 17:1", "isCorrect": true },
+      { "text": "Genèse 20:5", "isCorrect": false },
+      { "text": "Genèse 22:1", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans la valeur \"Consécration\", quelle raison biblique est donnée pour marcher dans la sainteté ?",
+    "options": [
+      { "text": "Parce que Dieu nous l'ordonne", "isCorrect": false },
+      { "text": "Parce que nous sommes son peuple", "isCorrect": false },
+      { "text": "Car il est saint", "isCorrect": true },
+      { "text": "Parce que c'est notre devoir", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Selon la valeur \"Transparence\", dans la gestion de quoi ne voulons-nous rien avoir à cacher ?",
+    "options": [
+      { "text": "Nos relations", "isCorrect": false },
+      { "text": "Nos ministères", "isCorrect": false },
+      { "text": "Nos affaires", "isCorrect": true },
+      { "text": "Nos finances personnelles", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans la métaphore de la valeur \"Humilité\", entre les mains de qui sommes-nous des vases inutiles ?",
+    "options": [
+      { "text": "Du pasteur", "isCorrect": false },
+      { "text": "De l'Esprit Saint", "isCorrect": false },
+      { "text": "Du potier", "isCorrect": true },
+      { "text": "De Dieu le Père", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Quelle est la référence complète du verset cité pour la valeur \"Humilité\" ?",
+    "options": [
+      { "text": "Jean 13:5", "isCorrect": false },
+      { "text": "Jean 13:8", "isCorrect": true },
+      { "text": "Jean 13:14", "isCorrect": false },
+      { "text": "Jean 13:15", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Combien de destinataires du respect sont mentionnés dans la valeur \"Respect\" ?",
+    "options": [
+      { "text": "Un seul : nos autorités", "isCorrect": false },
+      { "text": "Deux : nos frères et sœurs, et nos autorités", "isCorrect": true },
+      { "text": "Trois : Dieu, nos frères et nos autorités", "isCorrect": false },
+      { "text": "Quatre : Dieu, la famille, l'église, les autorités", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Selon les valeurs, quel est le fondement de toutes les valeurs d'ICC ?",
+    "options": [
+      { "text": "La Bible", "isCorrect": false },
+      { "text": "L'amour", "isCorrect": false },
+      { "text": "C.H.R.I.S.T", "isCorrect": true },
+      { "text": "La prière", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans la valeur \"Service\", quelle était la position de Jésus avant de devenir serviteur ?",
+    "options": [
+      { "text": "Seigneur", "isCorrect": false },
+      { "text": "Roi", "isCorrect": true },
+      { "text": "Maître", "isCorrect": false },
+      { "text": "Prophète", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Quelle valeur met l'accent sur le fait d'être \"des hommes et des femmes honnêtes\" ?",
+    "options": [
+      { "text": "Transparence", "isCorrect": false },
+      { "text": "Respect", "isCorrect": false },
+      { "text": "Intégrité", "isCorrect": true },
+      { "text": "Consécration", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Valeurs",
+    "difficulty": "Difficile",
+    "points": 1,
+    "question": "Dans quelle valeur est-il mentionné que nous sommes \"les enfants de la lumière\" ?",
+    "options": [
+      { "text": "Consécration", "isCorrect": false },
+      { "text": "Intégrité", "isCorrect": false },
+      { "text": "Service", "isCorrect": false },
+      { "text": "Transparence", "isCorrect": true }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Combien d'actions compose la mission I.M.P.A.C.T ?",
+    "options": [
+      { "text": "4 actions", "isCorrect": false },
+      { "text": "5 actions", "isCorrect": false },
+      { "text": "6 actions", "isCorrect": true },
+      { "text": "7 actions", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Quel acronyme est utilisé pour décrire les activités de la mission ?",
+    "options": [
+      { "text": "ÉGLISE", "isCorrect": false },
+      { "text": "CHRIST", "isCorrect": false },
+      { "text": "I.M.P.A.C.T", "isCorrect": true },
+      { "text": "MISSION", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Que signifie la lettre \"I\" dans I.M.P.A.C.T ?",
+    "options": [
+      { "text": "Inspirer", "isCorrect": false },
+      { "text": "Instruire", "isCorrect": false },
+      { "text": "Influencer", "isCorrect": true },
+      { "text": "Innover", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Que signifie la lettre \"M\" dans I.M.P.A.C.T ?",
+    "options": [
+      { "text": "Multiplier", "isCorrect": false },
+      { "text": "Mûrir", "isCorrect": true },
+      { "text": "Manifester", "isCorrect": false },
+      { "text": "Mobiliser", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Que signifie la lettre \"P\" dans I.M.P.A.C.T ?",
+    "options": [
+      { "text": "Prier", "isCorrect": false },
+      { "text": "Prêcher", "isCorrect": false },
+      { "text": "Pourvoir", "isCorrect": true },
+      { "text": "Prospérer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Que signifie la lettre \"A\" dans I.M.P.A.C.T ?",
+    "options": [
+      { "text": "Adorer", "isCorrect": false },
+      { "text": "Aimer", "isCorrect": true },
+      { "text": "Agir", "isCorrect": false },
+      { "text": "Annoncer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Que signifie la lettre \"C\" dans I.M.P.A.C.T ?",
+    "options": [
+      { "text": "Construire", "isCorrect": false },
+      { "text": "Créer", "isCorrect": false },
+      { "text": "Célébrer", "isCorrect": true },
+      { "text": "Confirmer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Que signifie la lettre \"T\" dans I.M.P.A.C.T ?",
+    "options": [
+      { "text": "Témoigner", "isCorrect": false },
+      { "text": "Transformer", "isCorrect": true },
+      { "text": "Transmettre", "isCorrect": false },
+      { "text": "Travailler", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Selon la mission \"Aimer\", qui devons-nous aimer ?",
+    "options": [
+      { "text": "Nos familles", "isCorrect": false },
+      { "text": "Notre église", "isCorrect": false },
+      { "text": "Notre prochain", "isCorrect": true },
+      { "text": "Nos ennemis", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Facile",
+    "points": 1,
+    "question": "Selon la mission \"Célébrer\", qui célébrons-nous lors de nos cultes ?",
+    "options": [
+      { "text": "Les membres de l'église", "isCorrect": false },
+      { "text": "Notre Seigneur Jésus", "isCorrect": true },
+      { "text": "Les pasteurs", "isCorrect": false },
+      { "text": "La communauté", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la mission \"Influencer\", que devons-nous influencer positivement ?",
+    "options": [
+      { "text": "Les médias sociaux", "isCorrect": false },
+      { "text": "Notre environnement et tous les lieux où nous sommes présents", "isCorrect": true },
+      { "text": "Les institutions gouvernementales", "isCorrect": false },
+      { "text": "Les autres églises", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la mission \"Mûrir\", comment les membres grandissent-ils spirituellement ?",
+    "options": [
+      { "text": "Par la prière quotidienne", "isCorrect": false },
+      { "text": "Via nos formations offertes", "isCorrect": true },
+      { "text": "Par la lecture biblique", "isCorrect": false },
+      { "text": "Par les jeûnes réguliers", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la mission \"Pourvoir\", à qui voulons-nous venir en aide ?",
+    "options": [
+      { "text": "Tous les habitants de Casablanca", "isCorrect": false },
+      { "text": "Les membres de l'église uniquement", "isCorrect": false },
+      { "text": "Les plus nécessiteux", "isCorrect": true },
+      { "text": "Les touristes et visiteurs", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la mission \"Pourvoir\", par quel moyen venons-nous en aide ?",
+    "options": [
+      { "text": "Par nos prières", "isCorrect": false },
+      { "text": "Par nos conseils", "isCorrect": false },
+      { "text": "Via nos œuvres charitables", "isCorrect": true },
+      { "text": "Par nos enseignements", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la mission \"Aimer\", de quelle manière devons-nous aimer notre prochain ?",
+    "options": [
+      { "text": "De manière spirituelle", "isCorrect": false },
+      { "text": "De manière émotionnelle", "isCorrect": false },
+      { "text": "De manière pratique", "isCorrect": true },
+      { "text": "De manière théorique", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la mission \"Célébrer\", lors de quels événements célébrons-nous notre Seigneur ?",
+    "options": [
+      { "text": "Lors de nos réunions de prière", "isCorrect": false },
+      { "text": "Lors de nos différents cultes", "isCorrect": true },
+      { "text": "Lors de nos événements spéciaux", "isCorrect": false },
+      { "text": "Lors de nos conférences", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la mission \"Transformer\", qui doit avoir un témoignage à la gloire de Dieu ?",
+    "options": [
+      { "text": "Les pasteurs et leaders", "isCorrect": false },
+      { "text": "Les nouveaux convertis", "isCorrect": false },
+      { "text": "Chacun des fidèles", "isCorrect": true },
+      { "text": "Les anciens de l'église", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Selon la mission \"Transformer\", que devons-nous transformer ?",
+    "options": [
+      { "text": "Notre mentalité", "isCorrect": false },
+      { "text": "Notre société", "isCorrect": false },
+      { "text": "La vie des fidèles", "isCorrect": true },
+      { "text": "Notre ville", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Quelle action de la mission I.M.P.A.C.T concerne spécifiquement la croissance spirituelle ?",
+    "options": [
+      { "text": "Influencer", "isCorrect": false },
+      { "text": "Mûrir", "isCorrect": true },
+      { "text": "Transformer", "isCorrect": false },
+      { "text": "Aimer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Intermédiaire",
+    "points": 1,
+    "question": "Quelle action de la mission I.M.P.A.C.T concerne spécifiquement l'aide sociale ?",
+    "options": [
+      { "text": "Aimer", "isCorrect": false },
+      { "text": "Pourvoir", "isCorrect": true },
+      { "text": "Transformer", "isCorrect": false },
+      { "text": "Influencer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Dans la mission I.M.P.A.C.T, combien d'actions impliquent directement une transformation ou un changement ?",
+    "options": [
+      { "text": "Une seule : Transformer", "isCorrect": false },
+      { "text": "Deux : Influencer et Transformer", "isCorrect": true },
+      { "text": "Trois : Influencer, Mûrir et Transformer", "isCorrect": false },
+      { "text": "Quatre : Influencer, Mûrir, Aimer et Transformer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Selon la structure de la mission, quel est l'objectif ultime de \"Transformer la vie des fidèles\" ?",
+    "options": [
+      { "text": "Qu'ils soient plus heureux", "isCorrect": false },
+      { "text": "Qu'ils deviennent des leaders", "isCorrect": false },
+      { "text": "Que chacun ait un témoignage à la gloire de Dieu", "isCorrect": true },
+      { "text": "Qu'ils soient plus engagés", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Dans la mission I.M.P.A.C.T, quelles sont les deux actions qui impliquent une dimension communautaire externe ?",
+    "options": [
+      { "text": "Aimer et Célébrer", "isCorrect": false },
+      { "text": "Influencer et Pourvoir", "isCorrect": true },
+      { "text": "Mûrir et Transformer", "isCorrect": false },
+      { "text": "Célébrer et Transformer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Quelle est la portée géographique mentionnée pour la mission \"Influencer\" ?",
+    "options": [
+      { "text": "Casablanca uniquement", "isCorrect": false },
+      { "text": "Le Maroc", "isCorrect": false },
+      { "text": "Notre environnement et tous les lieux où nous sommes présents", "isCorrect": true },
+      { "text": "Le monde francophone", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Dans la mission, quelle action vise spécifiquement le développement personnel des membres ?",
+    "options": [
+      { "text": "Influencer", "isCorrect": false },
+      { "text": "Mûrir", "isCorrect": true },
+      { "text": "Aimer", "isCorrect": false },
+      { "text": "Célébrer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Selon la logique de la mission I.M.P.A.C.T, quelle action représente l'expression verticale de notre relation avec Dieu ?",
+    "options": [
+      { "text": "Aimer", "isCorrect": false },
+      { "text": "Transformer", "isCorrect": false },
+      { "text": "Célébrer", "isCorrect": true },
+      { "text": "Mûrir", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Combien d'actions dans I.M.P.A.C.T concernent directement le service envers les autres (dimension horizontale) ?",
+    "options": [
+      { "text": "Deux : Aimer et Pourvoir", "isCorrect": false },
+      { "text": "Trois : Aimer, Pourvoir et Influencer", "isCorrect": true },
+      { "text": "Quatre : Influencer, Pourvoir, Aimer et Transformer", "isCorrect": false },
+      { "text": "Une seule : Aimer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Dans la mission, quelle action nécessite des ressources ou moyens matériels pour être accomplie ?",
+    "options": [
+      { "text": "Célébrer", "isCorrect": false },
+      { "text": "Mûrir", "isCorrect": false },
+      { "text": "Pourvoir", "isCorrect": true },
+      { "text": "Influencer", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Quelle est la progression logique dans la mission I.M.P.A.C.T entre développement interne et impact externe ?",
+    "options": [
+      { "text": "D'abord Influencer, ensuite Mûrir", "isCorrect": false },
+      { "text": "D'abord Mûrir (développement), ensuite Influencer (impact)", "isCorrect": true },
+      { "text": "D'abord Transformer, ensuite Célébrer", "isCorrect": false },
+      { "text": "Toutes les actions sont simultanées", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Mission",
+    "difficulty": "Difficile",
+    "points": 2,
+    "question": "Selon l'ensemble Vision-Valeurs-Mission, quel élément de la mission répond directement à la valeur de \"Service\" ?",
+    "options": [
+      { "text": "Célébrer", "isCorrect": false },
+      { "text": "Mûrir", "isCorrect": false },
+      { "text": "Aimer et Pourvoir", "isCorrect": true },
+      { "text": "Influencer", "isCorrect": false }
+    ]
+  }
+]

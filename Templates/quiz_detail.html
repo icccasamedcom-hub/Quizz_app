@@ -1,0 +1,46 @@
+<!-- templates/quiz_detail.html -->
+{% extends "base.html" %}
+
+{% block title %}{{ quiz.title }}{% endblock %}
+
+{% block content %}
+<!-- Quiz Hero -->
+<div
+    class="text-center p-8 sm:p-10 lg:p-12 bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">{{ quiz.title }}</h1>
+    <p class="text-base sm:text-lg lg:text-xl opacity-90">{{ quiz.description }}</p>
+</div>
+
+<!-- Quiz Info Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
+    <div class="bg-gray-50 p-5 sm:p-6 rounded-xl text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-[#667eea] mb-2">{{ quiz.questions|length }}</div>
+        <div class="text-sm sm:text-base text-gray-600">Questions</div>
+    </div>
+    <div class="bg-gray-50 p-5 sm:p-6 rounded-xl text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-[#667eea] mb-2">{{ quiz.difficulty }}</div>
+        <div class="text-sm sm:text-base text-gray-600">Difficulté</div>
+    </div>
+    <div class="bg-gray-50 p-5 sm:p-6 rounded-xl text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-[#667eea] mb-2">{{ quiz.category }}</div>
+        <div class="text-sm sm:text-base text-gray-600">Catégorie</div>
+    </div>
+</div>
+
+<!-- Actions -->
+<div class="text-center">
+    <form method="POST" action="{{ url_for('start_quiz', quiz_id=quiz._id) }}" id="startForm">
+        <button type="submit" class="btn btn-primary text-lg sm:text-xl px-8 sm:px-12 py-3 sm:py-4 mb-4">
+            🚀 Commencer le quiz
+        </button>
+    </form>
+    <a href="{{ url_for('dashboard') }}"
+        class="text-gray-600 hover:text-gray-800 transition-colors inline-flex items-center gap-2 text-sm sm:text-base">
+        ← Retour au tableau de bord
+    </a>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/quiz_detail.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,147 @@
+<!-- templates/quiz_question.html -->
+{% extends "base.html" %}
+
+{% block title %}Question {{ question_number }} - Quiz ICC{% endblock %}
+
+{% block extra_css %}
+<style type="text/tailwindcss">
+    .option-btn {
+        @apply w-full p-4 sm:p-5 text-left rounded-xl border-2 border-gray-200 bg-white;
+        @apply transition-all duration-300 hover:border-[#667eea] hover:shadow-md;
+        @apply flex items-center gap-4;
+    }
+    .option-btn:hover {
+        @apply -translate-y-0.5;
+    }
+    .option-btn.selected {
+        @apply border-[#667eea] bg-[#667eea]/5 shadow-md;
+    }
+    .option-btn .option-letter {
+        @apply w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-600;
+        @apply transition-all duration-300;
+    }
+    .option-btn.selected .option-letter {
+        @apply bg-[#667eea] text-white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+    <!-- Quiz Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div>
+            <span class="inline-block px-3 py-1 rounded-full text-sm font-medium mb-2
+                {% if attempt.category == 'Vision' %}bg-blue-100 text-blue-700
+                {% elif attempt.category == 'Valeurs' %}bg-purple-100 text-purple-700
+                {% else %}bg-emerald-100 text-emerald-700{% endif %}">
+                {{ attempt.category }}
+            </span>
+            <span class="inline-block px-3 py-1 rounded-full text-sm font-medium mb-2
+                {% if attempt.difficulty == 'Facile' %}bg-green-100 text-green-700
+                {% elif attempt.difficulty == 'Intermédiaire' %}bg-yellow-100 text-yellow-700
+                {% else %}bg-red-100 text-red-700{% endif %}">
+                {{ attempt.difficulty }}
+            </span>
+        </div>
+        <div class="text-gray-600 text-sm sm:text-base">
+            Question <span class="font-bold text-[#667eea]">{{ question_number }}</span> / {{ total_questions }}
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-8">
+        <div class="bg-gradient-to-r from-[#667eea] to-[#764ba2] h-2.5 rounded-full transition-all duration-500"
+            style="width: {{ progress_percentage }}%"></div>
+    </div>
+
+    <!-- Question Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-8 leading-relaxed">
+            {{ question.question }}
+        </h2>
+
+        <!-- Options -->
+        <div class="space-y-3" id="options-container">
+            {% for option in question.options %}
+            <button type="button" class="option-btn" data-answer="{{ option.text }}"
+                onclick="selectOption(this, '{{ option.text | replace("'", "\\'") }}')">
+                <span class="option-letter">{{ ['A', 'B', 'C', 'D'][loop.index0] }}</span>
+                <span class="text-gray-700 text-base sm:text-lg">{{ option.text }}</span>
+            </button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex justify-between items-center">
+        <div class="text-sm text-gray-500">
+            {% if question.points > 1 %}
+            <span class="text-[#667eea] font-semibold">{{ question.points }} points</span>
+            {% endif %}
+        </div>
+        <button id="next-btn" onclick="submitAnswer()" disabled
+            class="btn btn-primary px-8 py-3 opacity-50 cursor-not-allowed transition-all">
+            {% if question_number < total_questions %} Suivant → {% else %} Terminer le Quiz {% endif %} </button>
+    </div>
+</div>
+
+<script>
+    const attemptId = "{{ attempt._id }}";
+    const questionId = "{{ question._id }}";
+    let selectedAnswer = null;
+
+    function selectOption(element, answer) {
+        // Deselect all
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.classList.remove('selected');
+        });
+
+        // Select this one
+        element.classList.add('selected');
+        selectedAnswer = answer;
+
+        // Enable next button
+        const nextBtn = document.getElementById('next-btn');
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+    }
+
+    async function submitAnswer() {
+        if (!selectedAnswer) return;
+
+        const nextBtn = document.getElementById('next-btn');
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '⏳ Envoi...';
+
+        try {
+            const response = await fetch(`/quiz/attempt/${attemptId}/answer`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    question_id: questionId,
+                    answer: selectedAnswer
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                // Reload page for next question or complete
+                window.location.reload();
+            } else {
+                alert('Erreur: ' + (data.error || 'Une erreur est survenue'));
+                nextBtn.disabled = false;
+                nextBtn.innerHTML = 'Suivant →';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Une erreur est survenue. Veuillez réessayer.');
+            nextBtn.disabled = false;
+            nextBtn.innerHTML = 'Suivant →';
+        }
+    }
+</script>
+{% endblock %}

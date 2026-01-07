@@ -1,0 +1,63 @@
+<!-- templates/history.html -->
+{% extends "base.html" %}
+
+{% block title %}Historique{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-6 sm:mb-8">📚 Mon historique</h1>
+
+{% if attempts %}
+<div class="space-y-3 sm:space-y-4">
+    {% for attempt in attempts %}
+    <a href="{{ url_for('user.history_detail', attempt_id=attempt._id) }}" class="block no-underline">
+        <div class="bg-gray-50 p-4 sm:p-5 rounded-xl transition-all duration-300 hover:shadow-lg hover:translate-x-1">
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 sm:gap-5 items-center">
+                <!-- Category & Difficulty -->
+                <div class="sm:col-span-2">
+                    <div class="flex flex-wrap gap-2 mb-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-medium
+                            {% if attempt.category == 'Vision' %}bg-blue-100 text-blue-700
+                            {% elif attempt.category == 'Valeurs' %}bg-purple-100 text-purple-700
+                            {% else %}bg-emerald-100 text-emerald-700{% endif %}">
+                            {{ attempt.category }}
+                        </span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium
+                            {% if attempt.difficulty == 'Facile' %}bg-green-100 text-green-700
+                            {% elif attempt.difficulty == 'Intermédiaire' %}bg-yellow-100 text-yellow-700
+                            {% else %}bg-red-100 text-red-700{% endif %}">
+                            {{ attempt.difficulty }}
+                        </span>
+                    </div>
+                    <div class="text-xs sm:text-sm text-gray-600">
+                        {{ attempt.completed_at.strftime('%d/%m/%Y à %H:%M') }}
+                    </div>
+                </div>
+
+                <!-- Correct Answers -->
+                <div class="text-center">
+                    <div class="font-bold text-base sm:text-lg">{{ attempt.correct_answers }}/{{ attempt.total_questions
+                        }}</div>
+                    <div class="text-xs text-gray-600">bonnes réponses</div>
+                </div>
+
+                <!-- Score -->
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-bold text-[#667eea]">{{ "%.0f"|format(attempt.score) }}%</div>
+                    <div class="text-xs text-gray-600">{{ attempt.duration_seconds // 60 }}:{{
+                        "%02d"|format(attempt.duration_seconds % 60) }}</div>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<!-- Empty State -->
+<div class="text-center py-12 sm:py-16 text-gray-500">
+    <div class="text-5xl sm:text-6xl lg:text-7xl mb-4 sm:mb-6">📋</div>
+    <h2 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-700">Aucun quiz effectué</h2>
+    <p class="text-sm sm:text-base mb-6 sm:mb-8">Commencez votre premier quiz pour voir votre historique ici !</p>
+    <a href="{{ url_for('quiz.quiz_select') }}" class="btn btn-primary">Commencer un Quiz</a>
+</div>
+{% endif %}
+{% endblock %}

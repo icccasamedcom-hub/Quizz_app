@@ -1,0 +1,112 @@
+<!-- templates/quiz_results.html -->
+{% extends "base.html" %}
+
+{% block title %}Résultats - Quiz ICC{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <!-- Results Header -->
+    <div class="text-center p-8 sm:p-12 bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white rounded-2xl mb-8">
+        <div class="text-6xl sm:text-7xl mb-4">
+            {% if score >= 80 %}🏆
+            {% elif score >= 60 %}🎉
+            {% elif score >= 40 %}👍
+            {% else %}💪{% endif %}
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            {% if score >= 80 %}Excellent !
+            {% elif score >= 60 %}Bien joué !
+            {% elif score >= 40 %}Pas mal !
+            {% else %}Continuez !{% endif %}
+        </h1>
+
+        <div class="text-5xl sm:text-6xl font-bold mb-4">{{ "%.0f"|format(score) }}%</div>
+
+        <p class="text-xl opacity-90">
+            {{ correct_answers }} / {{ total_questions }} bonnes réponses
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-3 mt-6">
+            <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-medium">
+                {{ attempt.category }}
+            </span>
+            <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-medium">
+                {{ attempt.difficulty }}
+            </span>
+            <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-medium">
+                ⏱️ {{ (duration.total_seconds() // 60)|int }}m {{ (duration.total_seconds() % 60)|int }}s
+            </span>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+            <div class="text-2xl font-bold text-green-600">{{ correct_answers }}</div>
+            <div class="text-sm text-gray-600">Correctes</div>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+            <div class="text-2xl font-bold text-red-600">{{ total_questions - correct_answers }}</div>
+            <div class="text-sm text-gray-600">Incorrectes</div>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+            <div class="text-2xl font-bold text-[#667eea]">{{ total_questions }}</div>
+            <div class="text-sm text-gray-600">Total</div>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+            <div class="text-2xl font-bold text-purple-600">{{ (duration.total_seconds() // total_questions)|int }}s
+            </div>
+            <div class="text-sm text-gray-600">Moy/question</div>
+        </div>
+    </div>
+
+    <!-- Detailed Results -->
+    <div class="mb-8">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            📋 Détail des réponses
+        </h2>
+
+        <div class="space-y-4">
+            {% for result in detailed_results %}
+            <div
+                class="bg-white rounded-xl p-5 border-l-4 {{ 'border-green-500' if result.is_correct else 'border-red-500' }}">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="text-2xl">{{ '✅' if result.is_correct else '❌' }}</span>
+                    <div class="flex-1">
+                        <p class="font-semibold text-gray-800 mb-2">{{ result.question }}</p>
+
+                        {% if result.is_correct %}
+                        <p class="text-green-600 text-sm">
+                            <span class="font-medium">Votre réponse :</span> {{ result.user_answer }}
+                        </p>
+                        {% else %}
+                        <p class="text-red-600 text-sm mb-1">
+                            <span class="font-medium">Votre réponse :</span> {{ result.user_answer or 'Pas de réponse'
+                            }}
+                        </p>
+                        <p class="text-green-600 text-sm">
+                            <span class="font-medium">Bonne réponse :</span> {{ result.correct_answer }}
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="{{ url_for('quiz.quiz_select') }}" class="btn btn-primary px-8 py-3">
+            🔄 Nouveau Quiz
+        </a>
+        <a href="{{ url_for('quiz.dashboard') }}" class="btn btn-secondary px-8 py-3">
+            📊 Tableau de bord
+        </a>
+        <a href="{{ url_for('user.leaderboard') }}" class="btn btn-secondary px-8 py-3">
+            🏆 Classement
+        </a>
+    </div>
+</div>
+{% endblock %}

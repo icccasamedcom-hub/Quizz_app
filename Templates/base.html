@@ -1,0 +1,142 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <title>{% block title %}Quiz App{% endblock %}</title>
+    <style type="text/tailwindcss">
+        @layer components {
+            .container-custom {
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+            }
+            
+            .navbar {
+                @apply bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl px-4 sm:px-6 lg:px-8 py-3 sm:py-4 mb-6 sm:mb-8 flex justify-between items-center shadow-lg border border-white/20;
+            }
+            
+            .navbar-brand {
+                @apply text-xl sm:text-2xl font-extrabold text-[#667eea] tracking-tight;
+            }
+            
+            .navbar-menu {
+                @apply hidden md:flex gap-4 lg:gap-6 items-center;
+            }
+            
+            .navbar-menu-mobile {
+                @apply flex flex-col gap-3 py-4 px-4;
+            }
+            
+            .nav-link {
+                @apply text-gray-700 px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 hover:bg-[#667eea] hover:text-white font-medium text-sm sm:text-base;
+            }
+            
+            .user-info {
+                @apply hidden md:flex items-center gap-3 lg:gap-4 pl-4 lg:pl-6 border-l border-gray-200;
+            }
+            
+            .user-avatar {
+                @apply w-8 h-8 sm:w-10 sm:h-10 rounded-full ring-2 ring-[#667eea]/20 object-cover;
+            }
+            
+            .content {
+                @apply bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl border border-white/20;
+            }
+            
+            .btn {
+                @apply px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg border-none cursor-pointer text-sm sm:text-base font-semibold transition-all duration-300 no-underline inline-flex items-center justify-center shadow-sm;
+            }
+            
+            .btn-primary {
+                @apply bg-[#667eea] text-white hover:bg-[#5a6fd6] hover:-translate-y-0.5 hover:shadow-md;
+            }
+            
+            .btn-secondary {
+                @apply bg-slate-500 text-white hover:bg-slate-600 hover:-translate-y-0.5;
+            }
+            
+            .btn-google {
+                @apply bg-[#4285f4] text-white gap-2 sm:gap-3 hover:bg-[#3367d6] hover:shadow-md;
+            }
+        }
+        
+        body {
+            @apply font-sans antialiased min-h-screen p-3 sm:p-5 text-gray-800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    {% if session.user %}
+    <div class="container-custom">
+        <nav class="navbar">
+            <div class="navbar-brand">Quiz ICC</div>
+
+            <!-- Desktop Menu -->
+            <div class="navbar-menu">
+                <a href="{{ url_for('quiz.dashboard') }}" class="nav-link">Tableau de bord</a>
+                <a href="{{ url_for('user.history') }}" class="nav-link">Historique</a>
+                <a href="{{ url_for('user.leaderboard') }}" class="nav-link">Classement</a>
+                <a href="{{ url_for('user.profile') }}" class="nav-link">Profil</a>
+                <div class="user-info">
+                    <img src="{{ session.user.picture }}" alt="Avatar" class="user-avatar">
+                    <span class="font-medium text-gray-700 text-sm lg:text-base hidden lg:inline">{{ session.user.name
+                        }}</span>
+                    <a href="{{ url_for('auth.logout') }}"
+                        class="btn btn-secondary text-sm !py-1.5 sm:!py-2">Déconnexion</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-[#667eea] transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden mb-6">
+            <div class="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 overflow-hidden">
+                <div class="navbar-menu-mobile">
+                    <div class="flex items-center gap-3 pb-3 border-b border-gray-200">
+                        <img src="{{ session.user.picture }}" alt="Avatar" class="user-avatar">
+                        <span class="font-medium text-gray-700 text-sm">{{ session.user.name }}</span>
+                    </div>
+                    <a href="{{ url_for('quiz.dashboard') }}" class="nav-link block">Tableau de bord</a>
+                    <a href="{{ url_for('user.history') }}" class="nav-link block">Historique</a>
+                    <a href="{{ url_for('user.leaderboard') }}" class="nav-link block">Classement</a>
+                    <a href="{{ url_for('user.profile') }}" class="nav-link block">Profil</a>
+                    <a href="{{ url_for('auth.logout') }}" class="btn btn-secondary w-full mt-2">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="container-custom">
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

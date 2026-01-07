@@ -1,0 +1,88 @@
+<!-- templates/profile.html -->
+{% extends "base.html" %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block content %}
+<!-- Profile Header -->
+<div
+    class="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 p-6 sm:p-8 bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
+    <img src="{{ user.picture }}" alt="Avatar"
+        class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full border-4 border-white shadow-lg">
+    <div class="text-center sm:text-left">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{{ user.name }}</h1>
+        <p class="text-base sm:text-lg opacity-90">{{ user.email }}</p>
+        <p class="text-sm sm:text-base opacity-80 mt-2 sm:mt-3">
+            📅 Membre depuis le {{ user.created_at.strftime('%d/%m/%Y') }}
+        </p>
+    </div>
+</div>
+
+<!-- Statistics -->
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">📊 Mes statistiques</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 mb-8 sm:mb-10">
+    <div class="bg-gray-50 p-5 sm:p-6 rounded-xl text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-[#667eea] mb-2">{{ stats.total_attempts }}</div>
+        <div class="text-xs sm:text-sm text-gray-600">Quiz effectués</div>
+    </div>
+    <div class="bg-gray-50 p-5 sm:p-6 rounded-xl text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-[#667eea] mb-2">{{ "%.1f"|format(stats.average_score) }}%</div>
+        <div class="text-xs sm:text-sm text-gray-600">Score moyen</div>
+    </div>
+    <div class="bg-gray-50 p-5 sm:p-6 rounded-xl text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-[#667eea] mb-2">{{ "%.1f"|format(stats.best_score) }}%</div>
+        <div class="text-xs sm:text-sm text-gray-600">Meilleur score</div>
+    </div>
+    <div class="bg-gray-50 p-5 sm:p-6 rounded-xl text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-[#667eea] mb-2">{{ stats.total_time // 60 }} min</div>
+        <div class="text-xs sm:text-sm text-gray-600">Temps total</div>
+    </div>
+    <div class="bg-gray-50 p-5 sm:p-6 rounded-xl text-center sm:col-span-2 lg:col-span-1">
+        <div class="text-3xl sm:text-4xl font-bold text-[#667eea] mb-2">{{ stats.perfect_scores }}</div>
+        <div class="text-xs sm:text-sm text-gray-600">Scores parfaits</div>
+    </div>
+</div>
+
+<!-- Achievements -->
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">🏆 Réalisations</h2>
+
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
+    {% if stats.total_attempts >= 1 %}
+    <div class="bg-yellow-50 p-4 sm:p-5 rounded-xl text-center border-2 border-yellow-400">
+        <div class="text-3xl sm:text-4xl lg:text-5xl mb-2">🎯</div>
+        <div class="font-bold text-sm sm:text-base mb-1">Premier pas</div>
+        <div class="text-xs text-gray-600">Complétez votre premier quiz</div>
+    </div>
+    {% endif %}
+
+    {% if stats.total_attempts >= 10 %}
+    <div class="bg-yellow-50 p-4 sm:p-5 rounded-xl text-center border-2 border-yellow-400">
+        <div class="text-3xl sm:text-4xl lg:text-5xl mb-2">📚</div>
+        <div class="font-bold text-sm sm:text-base mb-1">Étudiant assidu</div>
+        <div class="text-xs text-gray-600">Complétez 10 quiz</div>
+    </div>
+    {% endif %}
+
+    {% if stats.perfect_scores >= 1 %}
+    <div class="bg-yellow-50 p-4 sm:p-5 rounded-xl text-center border-2 border-yellow-400">
+        <div class="text-3xl sm:text-4xl lg:text-5xl mb-2">💯</div>
+        <div class="font-bold text-sm sm:text-base mb-1">Perfectionniste</div>
+        <div class="text-xs text-gray-600">Obtenez un score parfait</div>
+    </div>
+    {% endif %}
+
+    {% if stats.best_score >= 90 %}
+    <div class="bg-yellow-50 p-4 sm:p-5 rounded-xl text-center border-2 border-yellow-400">
+        <div class="text-3xl sm:text-4xl lg:text-5xl mb-2">⭐</div>
+        <div class="font-bold text-sm sm:text-base mb-1">Expert</div>
+        <div class="text-xs text-gray-600">Score supérieur à 90%</div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Actions -->
+<div class="text-center">
+    <a href="{{ url_for('quiz.dashboard') }}" class="btn btn-primary">Retour au tableau de bord</a>
+</div>
+{% endblock %}

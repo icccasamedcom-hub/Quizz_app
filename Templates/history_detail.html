@@ -1,0 +1,74 @@
+<!-- templates/history_detail.html -->
+{% extends "base.html" %}
+
+{% block title %}Détail de la tentative{% endblock %}
+
+{% block content %}
+<!-- Header with Stats -->
+<div class="bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white p-6 sm:p-8 rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
+    <div class="flex flex-wrap gap-2 mb-4">
+        <span class="px-4 py-1.5 bg-white/20 rounded-full text-sm font-medium">
+            {{ attempt.category }}
+        </span>
+        <span class="px-4 py-1.5 bg-white/20 rounded-full text-sm font-medium">
+            {{ attempt.difficulty }}
+        </span>
+    </div>
+
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
+        Quiz {{ attempt.category }} - {{ attempt.difficulty }}
+    </h1>
+
+    <div class="grid grid-cols-3 gap-3 sm:gap-6 mb-4">
+        <div class="text-center">
+            <div class="text-3xl sm:text-4xl font-bold">{{ "%.0f"|format(attempt.score) }}%</div>
+            <div class="text-xs sm:text-sm opacity-90">Score</div>
+        </div>
+        <div class="text-center">
+            <div class="text-3xl sm:text-4xl font-bold">{{ attempt.correct_answers }}/{{ attempt.total_questions }}
+            </div>
+            <div class="text-xs sm:text-sm opacity-90">Réponses correctes</div>
+        </div>
+        <div class="text-center">
+            <div class="text-3xl sm:text-4xl font-bold">{{ attempt.duration_seconds // 60 }}:{{
+                "%02d"|format(attempt.duration_seconds % 60) }}</div>
+            <div class="text-xs sm:text-sm opacity-90">Durée</div>
+        </div>
+    </div>
+
+    <div class="text-sm sm:text-base opacity-90">
+        📅 {{ attempt.completed_at.strftime('%d/%m/%Y à %H:%M') }}
+    </div>
+</div>
+
+<!-- Detailed Review -->
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">Correction détaillée</h2>
+
+{% for result in detailed_results %}
+<div
+    class="mb-4 sm:mb-5 p-4 sm:p-5 rounded-xl border-l-4 {% if result.is_correct %}bg-green-50 border-green-500{% else %}bg-red-50 border-red-500{% endif %}">
+    <div class="font-bold text-gray-800 mb-3 text-sm sm:text-base">
+        Question {{ loop.index }} : {{ result.question }}
+        {% if result.is_correct %}<span class="ml-2">✅</span>{% else %}<span class="ml-2">❌</span>{% endif %}
+    </div>
+
+    {% for option in result.options %}
+    <div class="p-2 sm:p-3 my-2 rounded-lg text-sm sm:text-base
+        {% if option.text == result.correct_answer %}bg-green-200 text-green-800
+        {% elif option.text == result.user_answer and not result.is_correct %}bg-red-200 text-red-800
+        {% else %}bg-gray-100 text-gray-700{% endif %}">
+        {{ option.text }}
+        {% if option.text == result.correct_answer %} <span class="font-semibold">✓ (Bonne réponse)</span>{% endif %}
+        {% if option.text == result.user_answer and not result.is_correct %} <span class="font-semibold">✗ (Votre
+            réponse)</span>{% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 sm:mt-10">
+    <a href="{{ url_for('user.history') }}" class="btn btn-secondary">← Retour à l'historique</a>
+    <a href="{{ url_for('quiz.quiz_select') }}" class="btn btn-primary">🔄 Nouveau Quiz</a>
+</div>
+{% endblock %}

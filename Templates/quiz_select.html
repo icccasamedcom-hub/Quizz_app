@@ -1,0 +1,282 @@
+<!-- templates/quiz_select.html -->
+{% extends "base.html" %}
+
+{% block title %}Choisir un Quiz - Quiz ICC{% endblock %}
+
+{% block extra_css %}
+<style type="text/tailwindcss">
+    .category-card {
+        @apply relative p-6 sm:p-8 rounded-2xl cursor-pointer transition-all duration-300 border-2 border-transparent;
+        @apply hover:shadow-xl hover:-translate-y-1;
+    }
+    .category-card.selected {
+        @apply border-[#667eea] shadow-xl -translate-y-1;
+    }
+    .category-card.vision {
+        @apply bg-gradient-to-br from-blue-500 to-blue-700;
+    }
+    .category-card.valeurs {
+        @apply bg-gradient-to-br from-purple-500 to-purple-700;
+    }
+    .category-card.mission {
+        @apply bg-gradient-to-br from-emerald-500 to-emerald-700;
+    }
+    
+    .difficulty-btn {
+        @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 border-2;
+        @apply hover:shadow-lg hover:-translate-y-0.5;
+    }
+    .difficulty-btn.facile {
+        @apply bg-green-100 text-green-700 border-green-300 hover:bg-green-200;
+    }
+    .difficulty-btn.facile.selected {
+        @apply bg-green-500 text-white border-green-600;
+    }
+    .difficulty-btn.intermediaire {
+        @apply bg-yellow-100 text-yellow-700 border-yellow-300 hover:bg-yellow-200;
+    }
+    .difficulty-btn.intermediaire.selected {
+        @apply bg-yellow-500 text-white border-yellow-600;
+    }
+    .difficulty-btn.difficile {
+        @apply bg-red-100 text-red-700 border-red-300 hover:bg-red-200;
+    }
+    .difficulty-btn.difficile.selected {
+        @apply bg-red-500 text-white border-red-600;
+    }
+    
+    .step-indicator {
+        @apply flex items-center justify-center w-10 h-10 rounded-full font-bold text-lg;
+    }
+    .step-indicator.active {
+        @apply bg-[#667eea] text-white;
+    }
+    .step-indicator.completed {
+        @apply bg-green-500 text-white;
+    }
+    .step-indicator.pending {
+        @apply bg-gray-200 text-gray-500;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-8 sm:mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+            🎯 Choisir un Quiz
+        </h1>
+        <p class="text-gray-600 text-lg">
+            Sélectionnez une catégorie et un niveau de difficulté
+        </p>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="flex items-center justify-center gap-4 mb-10">
+        <div class="flex items-center gap-2">
+            <div id="step1-indicator" class="step-indicator active">1</div>
+            <span class="text-sm font-medium text-gray-700 hidden sm:inline">Catégorie</span>
+        </div>
+        <div class="w-12 h-0.5 bg-gray-300"></div>
+        <div class="flex items-center gap-2">
+            <div id="step2-indicator" class="step-indicator pending">2</div>
+            <span class="text-sm font-medium text-gray-500 hidden sm:inline">Niveau</span>
+        </div>
+        <div class="w-12 h-0.5 bg-gray-300"></div>
+        <div class="flex items-center gap-2">
+            <div id="step3-indicator" class="step-indicator pending">3</div>
+            <span class="text-sm font-medium text-gray-500 hidden sm:inline">Démarrer</span>
+        </div>
+    </div>
+
+    <!-- Step 1: Category Selection -->
+    <div id="step-category" class="mb-10">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+            <span class="bg-[#667eea] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+            Choisissez une catégorie
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            {% for cat in categories %}
+            <div class="category-card {{ cat.name|lower }}" data-category="{{ cat.name }}"
+                onclick="selectCategory('{{ cat.name }}')">
+                <div class="text-white text-center">
+                    <div class="text-4xl sm:text-5xl mb-4">
+                        {% if cat.name == 'Vision' %}👁️
+                        {% elif cat.name == 'Valeurs' %}💎
+                        {% else %}🚀{% endif %}
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2">{{ cat.name }}</h3>
+                    <p class="text-sm opacity-90">{{ cat.total }} questions</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Step 2: Difficulty Selection -->
+    <div id="step-difficulty" class="mb-10 opacity-50 pointer-events-none transition-all duration-300">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+            <span class="bg-gray-300 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm"
+                id="step2-badge">2</span>
+            Choisissez un niveau de difficulté
+        </h2>
+
+        <div class="flex flex-wrap gap-4 justify-center">
+            {% for diff in difficulties %}
+            <button class="difficulty-btn {{ diff|lower|replace('é', 'e')|replace('î', 'i') }}"
+                data-difficulty="{{ diff }}" onclick="selectDifficulty('{{ diff }}')">
+                {% if diff == 'Facile' %}🌱
+                {% elif diff == 'Intermédiaire' %}🌿
+                {% else %}🌳 {% endif %}
+                {{ diff }}
+                <span class="block text-xs mt-1 font-normal opacity-75"
+                    id="count-{{ diff|lower|replace('é', 'e')|replace('î', 'i') }}">
+                    -- questions
+                </span>
+            </button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Step 3: Start Quiz -->
+    <div id="step-start" class="text-center opacity-50 pointer-events-none transition-all duration-300">
+        <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 mb-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Récapitulatif</h3>
+            <p class="text-gray-600 mb-4">
+                <span id="summary-category" class="font-semibold">--</span> •
+                <span id="summary-difficulty" class="font-semibold">--</span> •
+                <span class="text-[#667eea] font-bold">10 questions</span>
+            </p>
+
+            <button id="start-btn" onclick="startQuiz()"
+                class="btn btn-primary text-lg px-10 py-4 hover:scale-105 transform transition-all">
+                🚀 Commencer le Quiz
+            </button>
+        </div>
+
+        <a href="{{ url_for('quiz.dashboard') }}"
+            class="text-gray-500 hover:text-gray-700 transition-colors inline-flex items-center gap-2">
+            ← Retour au tableau de bord
+        </a>
+    </div>
+</div>
+
+<!-- Data for JavaScript -->
+<script>
+    const categoriesData = {{ categories | tojson | safe }};
+</script>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    let selectedCategory = null;
+    let selectedDifficulty = null;
+
+    function selectCategory(category) {
+        selectedCategory = category;
+
+        // Update UI - category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.classList.remove('selected');
+            if (card.dataset.category === category) {
+                card.classList.add('selected');
+            }
+        });
+
+        // Update question counts for difficulties
+        const catData = categoriesData.find(c => c.name === category);
+        if (catData) {
+            document.getElementById('count-facile').textContent = catData.levels['Facile'] + ' questions';
+            document.getElementById('count-intermediaire').textContent = catData.levels['Intermédiaire'] + ' questions';
+            document.getElementById('count-difficile').textContent = catData.levels['Difficile'] + ' questions';
+        }
+
+        // Enable step 2
+        document.getElementById('step-difficulty').classList.remove('opacity-50', 'pointer-events-none');
+        document.getElementById('step2-badge').classList.remove('bg-gray-300');
+        document.getElementById('step2-badge').classList.add('bg-[#667eea]');
+
+        // Update step indicators
+        document.getElementById('step1-indicator').classList.remove('active');
+        document.getElementById('step1-indicator').classList.add('completed');
+        document.getElementById('step2-indicator').classList.remove('pending');
+        document.getElementById('step2-indicator').classList.add('active');
+
+        // Update summary
+        document.getElementById('summary-category').textContent = category;
+
+        // Reset difficulty selection
+        selectedDifficulty = null;
+        document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('selected'));
+        document.getElementById('step-start').classList.add('opacity-50', 'pointer-events-none');
+        document.getElementById('summary-difficulty').textContent = '--';
+    }
+
+    function selectDifficulty(difficulty) {
+        if (!selectedCategory) return;
+
+        selectedDifficulty = difficulty;
+
+        // Update UI - difficulty buttons
+        document.querySelectorAll('.difficulty-btn').forEach(btn => {
+            btn.classList.remove('selected');
+            if (btn.dataset.difficulty === difficulty) {
+                btn.classList.add('selected');
+            }
+        });
+
+        // Enable step 3
+        document.getElementById('step-start').classList.remove('opacity-50', 'pointer-events-none');
+
+        // Update step indicators
+        document.getElementById('step2-indicator').classList.remove('active');
+        document.getElementById('step2-indicator').classList.add('completed');
+        document.getElementById('step3-indicator').classList.remove('pending');
+        document.getElementById('step3-indicator').classList.add('active');
+
+        // Update summary
+        document.getElementById('summary-difficulty').textContent = difficulty;
+    }
+
+    async function startQuiz() {
+        if (!selectedCategory || !selectedDifficulty) return;
+
+        const btn = document.getElementById('start-btn');
+        btn.disabled = true;
+        btn.innerHTML = '⏳ Chargement...';
+
+        try {
+            const response = await fetch('/api/quiz/start', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    category: selectedCategory,
+                    difficulty: selectedDifficulty
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                alert('Erreur: ' + data.error);
+                btn.disabled = false;
+                btn.innerHTML = '🚀 Commencer le Quiz';
+                return;
+            }
+
+            // Redirect to quiz
+            window.location.href = '/quiz/attempt/' + data.attempt_id;
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Une erreur est survenue. Veuillez réessayer.');
+            btn.disabled = false;
+            btn.innerHTML = '🚀 Commencer le Quiz';
+        }
+    }
+</script>
+{% endblock %}
