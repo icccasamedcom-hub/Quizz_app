@@ -181,64 +181,9 @@ python app.py
 
 L'application sera accessible à : http://localhost:5000
 
-## 4. Structure de la base de données MongoDB
 
-### Collection : users
-```json
-{
-  "_id": ObjectId,
-  "email": "user@example.com",
-  "name": "John Doe",
-  "picture": "https://...",
-  "created_at": ISODate,
-  "last_login": ISODate
-}
-```
 
-### Collection : quizzes
-```json
-{
-  "_id": ObjectId,
-  "title": "Culture Générale",
-  "description": "Testez vos connaissances",
-  "category": "Culture",
-  "difficulty": "Moyen",
-  "created_at": ISODate,
-  "questions": [
-    {
-      "question": "Question text?",
-      "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
-      "correct_answer": "Option 1"
-    }
-  ]
-}
-```
-
-### Collection : attempts
-```json
-{
-  "_id": ObjectId,
-  "user_id": ObjectId,
-  "quiz_id": ObjectId,
-  "started_at": ISODate,
-  "completed_at": ISODate,
-  "completed": true,
-  "score": 75.5,
-  "correct_answers": 3,
-  "total_questions": 4,
-  "duration_seconds": 120,
-  "current_question": 4,
-  "answers": [
-    {
-      "question_id": 0,
-      "selected_answer": "Paris",
-      "answered_at": ISODate
-    }
-  ]
-}
-```
-
-## 5. Fonctionnalités implémentées
+## 4. Fonctionnalités implémentées
 
 ✅ Authentification OAuth 2.0 avec Google
 ✅ Création et gestion de compte utilisateur
@@ -259,7 +204,7 @@ L'application sera accessible à : http://localhost:5000
 - Validation des entrées utilisateur
 - Requêtes MongoDB paramétrées contre les injections
 
-## 6. Tests
+## 5. Tests
 
 Pour tester l'application :
 
@@ -271,7 +216,7 @@ Pour tester l'application :
    - Consultation de l'historique
    - Visualisation du profil
 
-## 7. Déploiement (Production)
+## 6. Déploiement (Production)
 
 Pour déployer en production :
 
@@ -288,7 +233,7 @@ pip install gunicorn
 gunicorn -w 4 -b 0.0.0.0:5000 app:app
 ```
 
-## 8. Support et Maintenance
+## 7. Support et Maintenance
 
 - Vérifiez régulièrement les logs
 - Sauvegardez la base de données MongoDB
@@ -298,22 +243,3 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 ## 📝 Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
-## 👥 Contributeurs
-
-Les contributions sont bienvenues ! Veuillez :
-
-1. Fork le projet
-2. Créer une branche (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
-
-## 📧 Contact & Support
-
-Pour toute question ou problème :
-- Ouvrez une issue sur GitHub
-- Consultez la [documentation technique](docs/Documentation_technique.md)
-- Vérifiez la [section FAQ](#support-et-maintenance)
-
----
