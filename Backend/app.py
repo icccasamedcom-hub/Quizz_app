@@ -1,6 +1,7 @@
 # Backend/app.py - Point d'entrée de l'application Flask (version refactorisée)
 
 from flask import Flask
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from config import Config
 from extensions import mongo, init_extensions
@@ -22,6 +23,9 @@ def create_app():
     
     # Enregistrer les blueprints
     register_blueprints(app)
+    
+    # Support Proxy pour Railway/Render (HTTPS)
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
     
     return app
 
