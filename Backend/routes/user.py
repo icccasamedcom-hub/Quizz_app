@@ -119,15 +119,19 @@ def leaderboard():
             average_score = sum(a['score'] for a in attempts) / total_attempts
             best_score = max((a['score'] for a in attempts), default=0)
             
+            # Ratio simple : Score moyen (pas de bonus arbitraire)
+            performance_index = average_score
+            
             leaderboard_data.append({
                 'name': user['name'],
                 'picture': user['picture'],
                 'total_attempts': total_attempts,
                 'average_score': average_score,
-                'best_score': best_score
+                'best_score': best_score,
+                'performance_index': performance_index
             })
     
-    # Trier par score moyen (décroissant)
-    leaderboard_data.sort(key=lambda x: x['average_score'], reverse=True)
+    # Trier par index de performance (décroissant)
+    leaderboard_data.sort(key=lambda x: (x['performance_index'], x['total_attempts']), reverse=True)
     
     return render_template('leaderboard.html', leaderboard=leaderboard_data)
