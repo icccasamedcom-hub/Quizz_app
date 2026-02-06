@@ -6,11 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     <title>{% block title %}Quiz App{% endblock %}</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style type="text/tailwindcss">
         @layer components {
             .container-custom {
-                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-sans;
             }
             
             .navbar {
@@ -18,7 +33,7 @@
             }
             
             .navbar-brand {
-                @apply text-xl sm:text-2xl font-extrabold text-[#667eea] tracking-tight;
+                @apply text-xl sm:text-2xl font-extrabold text-[#667eea] tracking-tight font-outfit;
             }
             
             .navbar-menu {
@@ -65,6 +80,10 @@
         body {
             @apply font-sans antialiased min-h-screen p-3 sm:p-5 text-gray-800;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        h1, h2, h3, .font-title {
+            @apply font-outfit;
         }
     </style>
     {% block extra_css %}{% endblock %}
