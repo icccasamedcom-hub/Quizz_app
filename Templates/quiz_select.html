@@ -127,9 +127,9 @@
             {% for diff in difficulties %}
             <button class="difficulty-btn {{ diff|lower|replace('é', 'e')|replace('î', 'i') }}"
                 data-difficulty="{{ diff }}" onclick="selectDifficulty('{{ diff }}')">
-                {% if diff == 'Facile' %}🌱
-                {% elif diff == 'Intermédiaire' %}🌿
-                {% else %}🌳 {% endif %}
+                {% if diff == 'Facile' %}⭐
+                {% elif diff == 'Intermédiaire' %}⭐⭐
+                {% else %}⭐⭐⭐ {% endif %}
                 {{ diff }}
                 <span class="block text-xs mt-1 font-normal opacity-75"
                     id="count-{{ diff|lower|replace('é', 'e')|replace('î', 'i') }}">
