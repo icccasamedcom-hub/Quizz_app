@@ -2,19 +2,48 @@
 
 import json
 import os
+import ssl
+import certifi
 from pymongo import MongoClient
 from datetime import datetime
 
 # Configuration
-MONGO_URI = os.environ.get('MONGO_URI', 'mongodb://localhost:27017/quiz_app')
+MONGO_URI = os.environ.get('MONGO_URI', 'mongodb+srv://icccasamedcom_db_user:j8SGJVHplY9Nt5Sj@cluster0.3v9elbn.mongodb.net/quiz_app?retryWrites=true&w=majority&appName=Cluster0&tlsAllowInvalidCertificates=true')
 JSON_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'docs', 'quiz_icc_mongodb.json')
 
 
 def import_questions():
     """Importe les questions du fichier JSON vers MongoDB"""
     
-    # Connexion à MongoDB
-    client = MongoClient(MONGO_URI)
+    # Connexion à MongoDB avec SSL désactivé pour tests
+    try:
+        # Créer un contexte SSL qui n'est pas vérifie les certificats
+        import ssl
+        ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+        ssl_context.check_hostname = False
+        ssl_context.verify_mode = ssl.CERT_NONE
+        
+        client = MongoClient(
+            MONGO_URI,
+            tls=True,
+            tlsAllowInvalidCertificates=True,
+            tlsAllowInvalidHostnames=True,
+            serverSelectionTimeoutMS=15000,
+            connectTimeoutMS=15000,
+            socketTimeoutMS=15000
+        )
+        # Test de connexion
+        client.admin.command('ping')
+        print("✅ Connexion à MongoDB Atlas réussie!")
+    except Exception as e:
+        print(f"❌ Erreur de connexion à MongoDB: {e}")
+        print("\n💡 Vérifiez:")
+        print("   1. Que votre IP est autorisée dans MongoDB Atlas (Network Access)")
+        print("   2. Que vos identifiants sont correctes")
+        print("   3. Que votre pare-feu autorise les connexions sortantes sur le port 27017")
+        print(f"\n🔍 URI utilisé: {MONGO_URI[:50]}...")
+        return
+    
     db = client.get_database()
     
     # Lire le fichier JSON

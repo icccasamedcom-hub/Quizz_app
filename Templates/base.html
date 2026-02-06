@@ -74,7 +74,10 @@
     {% if session.user %}
     <div class="container-custom">
         <nav class="navbar">
-            <div class="navbar-brand">Quiz ICC</div>
+            <div class="navbar-brand flex items-center gap-2">
+                <img src="{{ url_for('static', filename='images/logo-icc.png') }}" alt="Logo ICC" class="h-8 sm:h-10 w-auto object-contain">
+                <span>Quiz ICC</span>
+            </div>
 
             <!-- Desktop Menu -->
             <div class="navbar-menu">
@@ -118,11 +121,13 @@
     </div>
     {% endif %}
 
+    {% block main_container %}
     <div class="container-custom">
         <div class="content">
             {% block content %}{% endblock %}
         </div>
     </div>
+    {% endblock %}
 
     <script>
         // Mobile menu toggle

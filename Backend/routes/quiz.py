@@ -146,6 +146,29 @@ def quiz_attempt(attempt_id):
                           progress_percentage=progress_percentage)
 
 
+@quiz_bp.route('/quiz/attempt/<attempt_id>/previous', methods=['POST'])
+@login_required
+def previous_question(attempt_id):
+    """Revient à la question précédente"""
+    attempt = mongo.db.attempts.find_one({
+        '_id': ObjectId(attempt_id),
+        'user_id': ObjectId(session['user']['id'])
+    })
+    
+    if not attempt or attempt['completed']:
+        return jsonify({'error': 'Tentative invalide'}), 400
+    
+    # Vérifier si on peut reculer
+    if attempt['current_question'] > 0:
+        mongo.db.attempts.update_one(
+            {'_id': ObjectId(attempt_id)},
+            {'$inc': {'current_question': -1}}
+        )
+        return jsonify({'success': True})
+    
+    return jsonify({'error': 'Impossible de reculer'}), 400
+
+
 @quiz_bp.route('/quiz/attempt/<attempt_id>/answer', methods=['POST'])
 @login_required
 def submit_answer(attempt_id):
@@ -170,8 +193,8 @@ def submit_answer(attempt_id):
         if option.get('isCorrect'):
             correct_answer = option['text']
             break
-    
-    # Enregistrer la réponse
+            
+    # Vérifier si on met à jour une réponse existante ou si on en ajoute une nouvelle
     answer = {
         'question_id': str(question_id),
         'selected_answer': data['answer'],
@@ -180,13 +203,30 @@ def submit_answer(attempt_id):
         'answered_at': datetime.utcnow()
     }
     
-    mongo.db.attempts.update_one(
-        {'_id': ObjectId(attempt_id)},
-        {
-            '$push': {'answers': answer},
-            '$inc': {'current_question': 1}
-        }
-    )
+    # Si l'utilisateur répond à nouveau à la même question (cas du retour arrière)
+    # On doit mettre à jour la réponse dans le tableau 'answers' si elle existe déjà pour cet index
+    # Note: Dans cette implémentation simple, 'answers' est une liste append-only.
+    # Pour gérer le retour arrière proprement, on devrait idéalement utiliser un index ou map par question_id.
+    # Ici, nous allons simplement mettre à jour answer à l'index current_idx si possible, sinon append.
+    
+    if current_idx < len(attempt['answers']):
+        # Mise à jour réponse existante
+        mongo.db.attempts.update_one(
+            {'_id': ObjectId(attempt_id)},
+            {
+                '$set': {f'answers.{current_idx}': answer},
+                '$inc': {'current_question': 1}
+            }
+        )
+    else:
+        # Nouvelle réponse
+        mongo.db.attempts.update_one(
+            {'_id': ObjectId(attempt_id)},
+            {
+                '$push': {'answers': answer},
+                '$inc': {'current_question': 1}
+            }
+        )
     
     return jsonify({'success': True, 'is_correct': answer['is_correct']})
 
